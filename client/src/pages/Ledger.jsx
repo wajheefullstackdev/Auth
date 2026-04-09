@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { WORLD_CURRENCIES } from '../components/CurrencySelector';
 import { PlusCircle, Trash2, CheckCircle2, BookOpen, TrendingUp, Clock } from 'lucide-react';
 import toast from 'react-hot-toast';
+import { Helmet } from 'react-helmet-async';
 
 const STORAGE_KEY = 'splitrix_ledger';
 
@@ -75,6 +76,11 @@ const Ledger = () => {
 
     return (
         <div className="space-y-8 pb-12">
+            <Helmet>
+                <title>Ledger – Splitrix | Track Who Owes You</title>
+                <meta name="description" content="Keep track of money others owe you with Splitrix Ledger. Add entries, mark as settled, and stay on top of your finances." />
+                <link rel="canonical" href="https://splitrix.vercel.app/ledger" />
+            </Helmet>
             {/* Header */}
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div className="flex flex-col gap-2">

@@ -19,6 +19,7 @@ import {
 } from 'lucide-react';
 import toast from 'react-hot-toast';
 import { WORLD_CURRENCIES } from '../components/CurrencySelector';
+import { Helmet } from 'react-helmet-async';
 
 const GroupDetail = () => {
     const { id } = useParams();
@@ -152,6 +153,11 @@ const GroupDetail = () => {
 
     return (
         <div className="space-y-6 pb-16">
+            <Helmet>
+                <title>{currentGroup.name} – Group Expenses | Splitrix</title>
+                <meta name="description" content={`View and manage shared expenses for ${currentGroup.name} on Splitrix. Split bills equally and settle up.`} />
+                <link rel="canonical" href={`https://splitrix.vercel.app/groups/${id}`} />
+            </Helmet>
             {/* Header */}
             <div className="flex items-center gap-4">
                 <button

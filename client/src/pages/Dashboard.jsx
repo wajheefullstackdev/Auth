@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchExpenses, fetchSummary, addExpense } from '../features/expenseSlice';
 import { Coins, Plus, Calendar, TrendingUp, TrendingDown, AlignLeft, Loader2 } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 
 const CURRENCY_SYMBOLS = {
     USD: '$',
@@ -53,6 +54,11 @@ const Dashboard = () => {
 
     return (
         <div className="space-y-8 pb-12">
+            <Helmet>
+                <title>Dashboard – Splitrix | Your Financial Overview</title>
+                <meta name="description" content="View your expense summary, track monthly spending, and add new expenses on your Splitrix dashboard." />
+                <link rel="canonical" href="https://splitrix.vercel.app/" />
+            </Helmet>
             <div className="flex flex-col gap-2">
                 <h1 className="text-3xl font-bold tracking-tight">Overview</h1>
                 <p className="text-muted-foreground">Monitor your financial health and recent expenditures.</p>

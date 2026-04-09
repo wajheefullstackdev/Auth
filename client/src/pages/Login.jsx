@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { loginUser, clearError } from '../features/authSlice';
 import { useNavigate, Link } from 'react-router-dom';
 import { Wallet, Mail, Lock, ArrowRight, Loader2 } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 
 const Login = () => {
     const [formData, setFormData] = useState({ email: '', password: '' });
@@ -22,6 +23,14 @@ const Login = () => {
 
     return (
         <div className="min-h-screen flex items-center justify-center p-4">
+            <Helmet>
+                <title>Login – Splitrix | Expense Tracker & Bill Splitter</title>
+                <meta name="description" content="Sign in to Splitrix to track your expenses, split group bills, and manage your personal finances. Free and easy to use." />
+                <link rel="canonical" href="https://splitrix.vercel.app/login" />
+                <meta property="og:title" content="Login – Splitrix" />
+                <meta property="og:description" content="Sign in to Splitrix to manage your expenses and split bills." />
+                <meta property="og:url" content="https://splitrix.vercel.app/login" />
+            </Helmet>
             <div className="w-full max-w-md glass-card rounded-2xl p-8 relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-3xl -mr-10 -mt-10" />
                 <div className="absolute bottom-0 left-0 w-32 h-32 bg-secondary/20 rounded-full blur-3xl -ml-10 -mb-10" />

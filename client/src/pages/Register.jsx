@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { registerUser, clearError } from '../features/authSlice';
 import { useNavigate, Link } from 'react-router-dom';
 import { Wallet, User, Mail, Lock, ArrowRight, Loader2 } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 
 const Register = () => {
     const [formData, setFormData] = useState({ username: '', email: '', password: '' });
@@ -26,6 +27,14 @@ const Register = () => {
 
     return (
         <div className="min-h-screen flex items-center justify-center p-4">
+            <Helmet>
+                <title>Create Account – Splitrix | Free Expense Tracker</title>
+                <meta name="description" content="Create a free Splitrix account to start tracking expenses, splitting group bills, and managing your personal finances." />
+                <link rel="canonical" href="https://splitrix.vercel.app/register" />
+                <meta property="og:title" content="Create Account – Splitrix" />
+                <meta property="og:description" content="Join Splitrix for free – track expenses and split bills with friends." />
+                <meta property="og:url" content="https://splitrix.vercel.app/register" />
+            </Helmet>
             <div className="w-full max-w-md glass-card rounded-2xl p-8 relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-32 h-32 bg-primary/10 rounded-full blur-3xl -ml-10 -mt-10" />
                 <div className="absolute bottom-0 right-0 w-32 h-32 bg-secondary/20 rounded-full blur-3xl -mr-10 -mb-10" />

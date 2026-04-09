@@ -5,6 +5,7 @@ import { Users, Plus, ChevronRight, Loader2, Search, X } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import api from '../services/api';
 import toast from 'react-hot-toast';
+import { Helmet } from 'react-helmet-async';
 
 const GroupList = () => {
     const dispatch = useDispatch();
@@ -100,6 +101,11 @@ const GroupList = () => {
 
     return (
         <div className="space-y-8 pb-12">
+            <Helmet>
+                <title>Your Groups – Splitrix | Split Expenses with Friends</title>
+                <meta name="description" content="Create and manage expense groups on Splitrix. Split bills with friends, roommates, and family – settle up easily." />
+                <link rel="canonical" href="https://splitrix.vercel.app/groups" />
+            </Helmet>
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div className="flex flex-col gap-2">
                     <h1 className="text-3xl font-bold tracking-tight">Your Groups</h1>

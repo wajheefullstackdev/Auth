@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# Sitemap
+Sitemap: https://splitrix.vercel.app/sitemap.xml
+
+# Crawl-delay (polite request)
+Crawl-delay: 1
